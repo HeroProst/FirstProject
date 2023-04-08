@@ -1,0 +1,5 @@
+Platform     : Windows_x64
+Graphics     : Tiles
+Build number : #10985
+Build version: 0.E-5724-g41a91a7
+Major version: 0.E

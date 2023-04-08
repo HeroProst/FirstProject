@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/8689af0304a57abada2e2afc88475f95.jpg-aa19de8be19839831ba7e2f64b7cfcff.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Различные корни хрена/8689af0304a57abada2e2afc88475f95.jpg"
+dest_files=[ "res://.import/8689af0304a57abada2e2afc88475f95.jpg-aa19de8be19839831ba7e2f64b7cfcff.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

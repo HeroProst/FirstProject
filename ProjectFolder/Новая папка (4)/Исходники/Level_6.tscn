@@ -1,0 +1,351 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://Различные корни хрена/Floor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Различные корни хрена/hdfon.ru-533815947.jpg" type="Texture" id=2]
+[ext_resource path="res://Player_Water.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player_Water.gd" type="Script" id=4]
+[ext_resource path="res://teleport/Teleport_Level1_BACK.tscn" type="PackedScene" id=5]
+[ext_resource path="res://teleport/Teleport_Level6_BACK.gd" type="Script" id=6]
+[ext_resource path="res://hp_bar/hp_bar_full.png" type="Texture" id=7]
+[ext_resource path="res://hp_bar/hp_bar_empty.png" type="Texture" id=8]
+[ext_resource path="res://hp_bar/hp_bar_half.png" type="Texture" id=9]
+[ext_resource path="res://Squid_boss/Squid_Boss.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Squid_boss/Attack/Straight-Shot-Enemy.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Level_6.gd" type="Script" id=12]
+[ext_resource path="res://Squid_boss/Attack/Attack1/attack1.gd" type="Script" id=13]
+[ext_resource path="res://Squid_boss/Attack/Straight-Shot-Enemy.gd" type="Script" id=14]
+[ext_resource path="res://Spr.tscn" type="PackedScene" id=15]
+[ext_resource path="res://pngegg.png" type="Texture" id=16]
+[ext_resource path="res://teleport/Teleport_Level1.tscn" type="PackedScene" id=17]
+[ext_resource path="res://teleport/Teleport_Level6_NExt.gd" type="Script" id=18]
+[ext_resource path="res://Level_7.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Beat_the_Boss.gd" type="Script" id=20]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 44.9101, 454.513 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 1110.82, 10 )
+
+[node name="Level_6" type="Node2D"]
+script = ExtResource( 12 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2( -3.8147e-06, 0 )
+color = Color( 0.490196, 0.427451, 0.792157, 1 )
+
+[node name="BackGround" type="Sprite" parent="."]
+position = Vector2( 379.369, 368.049 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Squid_Boss" parent="." instance=ExtResource( 10 )]
+position = Vector2( 468.178, 372.202 )
+
+[node name="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 18.3835, 712.099 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -126.695, -1077.84 )
+scale = Vector2( 2, 2 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 1772.7, -1077.84 )
+scale = Vector2( 2, 2 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 839.877, -1566.74 )
+scale = Vector2( 2, 2 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 183.66, 712.099 )
+collision_layer = 17
+
+[node name="StaticBody2D3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 349.223, 711.796 )
+
+[node name="StaticBody2D4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 514.795, 711.804 )
+
+[node name="StaticBody2D5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 680.288, 711.804 )
+
+[node name="StaticBody2D6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 845.893, 711.725 )
+
+[node name="Teleport" parent="." instance=ExtResource( 5 )]
+visible = false
+position = Vector2( 56.8864, 585.332 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 6 )
+
+[node name="hp_bar_empty" type="Sprite" parent="."]
+visible = false
+position = Vector2( 440.088, 30.5582 )
+scale = Vector2( 0.375, 0.375 )
+texture = ExtResource( 8 )
+
+[node name="hp_bar_full" type="Sprite" parent="."]
+position = Vector2( 440.088, 30.5582 )
+scale = Vector2( 0.375, 0.375 )
+texture = ExtResource( 7 )
+
+[node name="hp_bar_half" type="Sprite" parent="."]
+visible = false
+position = Vector2( 440.088, 30.5582 )
+scale = Vector2( 0.375, 0.375 )
+texture = ExtResource( 9 )
+
+[node name="PLAYER" type="Node2D" parent="."]
+position = Vector2( 59.9075, 601.894 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Player" parent="PLAYER" instance=ExtResource( 3 )]
+position = Vector2( -0.70631, -1.4126 )
+scale = Vector2( 1, 1 )
+script = ExtResource( 4 )
+
+[node name="Attack_1" type="Node2D" parent="."]
+
+[node name="Straight-Shot-Enemy" parent="Attack_1" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 1001.62, 541.322 )
+script = ExtResource( 13 )
+
+[node name="Straight-Shot-Enemy8" parent="Attack_1" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 1002.88, 599.278 )
+script = ExtResource( 13 )
+
+[node name="Straight-Shot-Enemy2" parent="Attack_1" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 1001.62, 455.701 )
+script = ExtResource( 13 )
+
+[node name="Straight-Shot-Enemy3" parent="Attack_1" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 1000.73, 376.697 )
+script = ExtResource( 13 )
+
+[node name="Straight-Shot-Enemy4" parent="Attack_1" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 999.67, 282.952 )
+script = ExtResource( 13 )
+
+[node name="Straight-Shot-Enemy5" parent="Attack_1" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 996.949, 179.807 )
+script = ExtResource( 13 )
+
+[node name="Straight-Shot-Enemy6" parent="Attack_1" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 996.949, 82.3802 )
+script = ExtResource( 13 )
+
+[node name="Straight-Shot-Enemy7" parent="Attack_1" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 996.949, -13.0245 )
+script = ExtResource( 13 )
+
+[node name="Straight-Shot-Enemy9" parent="Attack_1" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 73.1526, -116 )
+script = ExtResource( 14 )
+
+[node name="Straight-Shot-Enemy10" parent="Attack_1" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 177.726, -116 )
+script = ExtResource( 14 )
+
+[node name="Straight-Shot-Enemy11" parent="Attack_1" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 269.7, -116 )
+script = ExtResource( 14 )
+
+[node name="Straight-Shot-Enemy12" parent="Attack_1" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 357.895, -116 )
+script = ExtResource( 14 )
+
+[node name="Straight-Shot-Enemy13" parent="Attack_1" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 443.569, -116 )
+script = ExtResource( 14 )
+
+[node name="Straight-Shot-Enemy14" parent="Attack_1" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 526.724, -116 )
+script = ExtResource( 14 )
+
+[node name="Straight-Shot-Enemy15" parent="Attack_1" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 607.359, -116 )
+script = ExtResource( 14 )
+
+[node name="Straight-Shot-Enemy16" parent="Attack_1" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 681.695, -116 )
+script = ExtResource( 14 )
+
+[node name="Straight-Shot-Enemy17" parent="Attack_1" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 761.07, -116 )
+script = ExtResource( 14 )
+
+[node name="Attack1" type="Timer" parent="Attack_1"]
+wait_time = 5.0
+one_shot = true
+
+[node name="Attack_2" type="Node2D" parent="."]
+
+[node name="Straight-Shot-Enemy18" parent="Attack_2" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 1001.62, 541.322 )
+script = ExtResource( 13 )
+
+[node name="Straight-Shot-Enemy19" parent="Attack_2" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 1002.88, 599.278 )
+script = ExtResource( 13 )
+
+[node name="Straight-Shot-Enemy20" parent="Attack_2" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 1001.62, 455.701 )
+script = ExtResource( 13 )
+
+[node name="Straight-Shot-Enemy21" parent="Attack_2" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 1000.73, 376.697 )
+script = ExtResource( 13 )
+
+[node name="Straight-Shot-Enemy22" parent="Attack_2" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 999.67, 282.952 )
+script = ExtResource( 13 )
+
+[node name="Straight-Shot-Enemy23" parent="Attack_2" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 996.949, 179.807 )
+script = ExtResource( 13 )
+
+[node name="Straight-Shot-Enemy24" parent="Attack_2" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 996.949, 82.3802 )
+script = ExtResource( 13 )
+
+[node name="Straight-Shot-Enemy25" parent="Attack_2" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 996.949, -13.0245 )
+script = ExtResource( 13 )
+
+[node name="Attack2" type="Timer" parent="Attack_2"]
+wait_time = 3.0
+one_shot = true
+
+[node name="Attack_3" type="Node2D" parent="."]
+
+[node name="Straight-Shot-Enemy18" parent="Attack_3" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 73.1526, -116 )
+script = ExtResource( 14 )
+
+[node name="Straight-Shot-Enemy19" parent="Attack_3" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 177.726, -116 )
+script = ExtResource( 14 )
+
+[node name="Straight-Shot-Enemy20" parent="Attack_3" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 269.7, -116 )
+script = ExtResource( 14 )
+
+[node name="Straight-Shot-Enemy21" parent="Attack_3" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 357.895, -116 )
+script = ExtResource( 14 )
+
+[node name="Straight-Shot-Enemy22" parent="Attack_3" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 443.569, -116 )
+script = ExtResource( 14 )
+
+[node name="Straight-Shot-Enemy23" parent="Attack_3" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 526.724, -116 )
+script = ExtResource( 14 )
+
+[node name="Straight-Shot-Enemy24" parent="Attack_3" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 607.359, -116 )
+script = ExtResource( 14 )
+
+[node name="Straight-Shot-Enemy25" parent="Attack_3" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 681.695, -116 )
+script = ExtResource( 14 )
+
+[node name="Straight-Shot-Enemy26" parent="Attack_3" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 761.07, -116 )
+script = ExtResource( 14 )
+
+[node name="Attack3" type="Timer" parent="Attack_3"]
+wait_time = 3.0
+one_shot = true
+
+[node name="Change_phase" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="Beat_the_Boss" type="Node2D" parent="."]
+position = Vector2( 196.008, 219.191 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 20 )
+
+[node name="Spr" parent="Beat_the_Boss" instance=ExtResource( 15 )]
+visible = false
+
+[node name="Spr2" parent="Beat_the_Boss" instance=ExtResource( 15 )]
+visible = false
+position = Vector2( 123.678, 487.575 )
+
+[node name="Spr3" parent="Beat_the_Boss" instance=ExtResource( 15 )]
+visible = false
+position = Vector2( 891.905, -95.1365 )
+
+[node name="Spr4" parent="Beat_the_Boss" instance=ExtResource( 15 )]
+visible = false
+position = Vector2( 827.688, 651.685 )
+
+[node name="Spr5" parent="Beat_the_Boss" instance=ExtResource( 15 )]
+visible = false
+position = Vector2( 1046.5, 273.518 )
+
+[node name="Spr6" parent="Beat_the_Boss" instance=ExtResource( 15 )]
+visible = false
+position = Vector2( 323.464, -280.653 )
+
+[node name="CD" type="Timer" parent="Beat_the_Boss"]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="Death" type="Sprite" parent="."]
+visible = false
+position = Vector2( 439.004, 347.022 )
+texture = ExtResource( 16 )
+
+[node name="Teleport2" parent="." instance=ExtResource( 17 )]
+visible = false
+position = Vector2( 754.294, 518.577 )
+script = ExtResource( 18 )
+target_scene = ExtResource( 19 )
+[connection signal="timeout" from="Attack_1/Attack1" to="." method="_on_Attack1_timeout"]
+[connection signal="timeout" from="Attack_2/Attack2" to="." method="_on_Attack2_timeout"]
+[connection signal="timeout" from="Attack_3/Attack3" to="." method="_on_Attack3_timeout"]
+[connection signal="timeout" from="Change_phase" to="." method="_on_Change_phase_timeout"]
+[connection signal="timeout" from="Beat_the_Boss/CD" to="." method="_on_CD_timeout"]

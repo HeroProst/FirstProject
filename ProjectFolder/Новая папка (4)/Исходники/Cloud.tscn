@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://platform/adsadaa.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 93.6985, 32.2193 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 116.886, 12.8736 )
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+scale = Vector2( 0.5, 0.5 )
+
+[node name="adsadaa" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -12.1696, 9.24348 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 2.24493, 14.592 )
+shape = SubResource( 2 )
+one_way_collision = true

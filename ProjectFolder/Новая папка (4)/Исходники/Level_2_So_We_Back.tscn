@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Различные корни хрена/Floor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Различные корни хрена/1600201578_20-p-fon-peshchera-27.jpg" type="Texture" id=3]
+[ext_resource path="res://Cave_platform.tscn" type="PackedScene" id=4]
+[ext_resource path="res://teleport/Teleport_Level1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Level_2.gd" type="Script" id=7]
+[ext_resource path="res://teleport/Teleport_Level1_BACK.tscn" type="PackedScene" id=8]
+[ext_resource path="res://teleport/Teleport_Level1_1.gd" type="Script" id=9]
+
+
+[node name="Level_2" type="Node2D"]
+position = Vector2( -275.688, -491.445 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 7 )
+
+[node name="1600201578_20-p-fon-peshchera-27" type="Sprite" parent="."]
+position = Vector2( 471.105, 540.374 )
+scale = Vector2( 0.299518, 0.354367 )
+texture = ExtResource( 3 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 4 )]
+position = Vector2( 292.692, 678.474 )
+
+[node name="KinematicBody2D2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 636.192, 679.356 )
+
+[node name="KinematicBody2D3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 549.821, 624.53 )
+
+[node name="KinematicBody2D4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 366, 626.547 )
+
+[node name="KinematicBody2D5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 455.865, 585.627 )
+
+[node name="KinematicBody2D6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 346.988, 549.668 )
+
+[node name="KinematicBody2D7" parent="." instance=ExtResource( 4 )]
+position = Vector2( 559.747, 549.668 )
+
+[node name="Teleport" parent="." instance=ExtResource( 6 )]
+position = Vector2( 454.894, 541.49 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 9 )
+
+[node name="Player2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 455.473, 571.959 )
+
+[node name="Teleport2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 456.992, 671.485 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="StaticBody2D2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 264.676, 794.057 )
+
+[node name="StaticBody2D3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 429.927, 794.1 )
+
+[node name="StaticBody2D4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 595.353, 794.097 )
+
+[node name="StaticBody2D5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 759.957, 794.097 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

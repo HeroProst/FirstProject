@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/kisspng-vector-graphics-transparency-pixel-image-clip-art-log-cabin-pixel-art-maker-5c777c6d5c3df3.1067626915513345093778.png-f32042fb0ea2c0c19e6703342e46ec68.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Различные корни хрена/kisspng-vector-graphics-transparency-pixel-image-clip-art-log-cabin-pixel-art-maker-5c777c6d5c3df3.1067626915513345093778.png"
+dest_files=[ "res://.import/kisspng-vector-graphics-transparency-pixel-image-clip-art-log-cabin-pixel-art-maker-5c777c6d5c3df3.1067626915513345093778.png-f32042fb0ea2c0c19e6703342e46ec68.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
